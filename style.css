@@ -1,3 +1,40 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-color: #FFCDBD;
+}
+
+.navBar{
+    list-style-type: none;
+    background-color: #ffaf9d;
+    overflow: hidden;
+    padding: 1em;
+}
+
+.NavLinks{
+    display:inline;
+}
+
+li a {
+    text-align: center;
+    text-decoration: none;
+    color: #A44A3F;
+    font-size: 1.5 em;
+    font-family: cursive;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    padding-top: 1.5em;
+    padding-bottom:1.5em;
+    gap:20px;
+}
+
+li a :hover{
+    color:pink;
+}
+
 .firstPicture{
     width: 100%;
     height:auto
@@ -8,10 +45,11 @@
     height:auto;
 }
 
-.Homeintro{
+.homeIntro{
     display:flex;
     align-items: center;
     gap: 20px;
+    padding-top: 1em;
 }
 .introText{
     flex:1;
