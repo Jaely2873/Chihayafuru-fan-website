@@ -1,0 +1,19 @@
+.firstPicture{
+    width: 100%;
+    height:auto
+}
+
+.introImage{
+    width:50%;
+    height:auto;
+}
+
+.Homeintro{
+    display:flex;
+    align-items: center;
+    gap: 20px;
+}
+.introText{
+    flex:1;
+    min-width:250px;
+}
