@@ -11,7 +11,7 @@ body{
     list-style-type: none;
     background-color: #ffaf9d;
     overflow: hidden;
-    padding: 1em;
+    padding: 2em;
 }
 
 .NavLinks{
@@ -49,9 +49,49 @@ li a :hover{
     display:flex;
     align-items: center;
     gap: 20px;
-    padding-top: 1em;
+    padding-top: 13em;
 }
 .introText{
     flex:1;
     min-width:250px;
+    font-size: 25px;
+    font-family: cursive;
 }
+
+.parallaxContainer{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    min-height: 900px;
+    background-attachment: fixed;
+    background-image:url("../assets/homeImage.jpg");
+    background-position:center;
+    background-size:cover;
+    background-color: rgba(0,0,0,0,0.4);
+}
+
+.parallaxText{
+    color:rgb(210, 106, 65);
+    font-size: 40px;
+    font-family: cursive;;
+    text-align: center;
+    text-decoration:solid;
+}
+
+.barrier{
+    display: flex;
+    background-color:#A44A3F;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#description{
+    font-size: 25px;
+    font-family: cursive;
+    padding: 2em;
+    text-align: center;
+}
+
