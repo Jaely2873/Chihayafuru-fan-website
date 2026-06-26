@@ -12,7 +12,6 @@ body{
     background-color: #ffaf9d;
     overflow: hidden;
     padding: 2em;
-    position: fixed;
     width:100%;
 }
 
@@ -148,5 +147,23 @@ li a :hover{
 #taichiPicture{
     width:50%;
     height:auto;
+}
+
+.quickLinks{
+    font-size:40px;
+    margin-top: 15px;
+    margin-bottom:40px;
+    padding-left: 0px;
+}
+
+#quickLinkHeading{
+    font-size: 50px;
+    color:#A44A3F;
+    font-family:cursive;
+}
+
+#heart{
+    display:flex;
+    justify-content: center;
 }
 
