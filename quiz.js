@@ -1,21 +1,15 @@
+
 var correctAnswerScore = 0;
 var wrongAnswerScore = 0;
 var questionCount = 0;
+var totalScore = 4;
 
 const questionElement = document.getElementById("question");
 const answer = document.getElementById("answers");
-var q1a1 = document.getElementById("q1a1");
-var q1a2 = document.getElementById("q1a2");
-var q2a1 = document.getElementById("q2a1");
-var q2a2 = document.getElementById("q2a2");
-var q3a1 = document.getElementById("q3a1");
-var q3a2 = document.getElementById("q3a2");
-var q4a1 = document.getElementById("q4a1");
-var q4a2 = document.getElementById("q4a2");
-var q5a1 = document.getElementById("q5a1");
-var q5a2 = document.getElementById("q5a2");
+const resultScore = document.getElementById("resultScore");
 const answer1 = document.getElementById("answer1");
 const answer2 = document.getElementById("answer2");
+const resultButton = document.getElementById("result");
 
 const quizData =[{
     question:"Who did Chihaya end up with?",
@@ -42,11 +36,17 @@ const quizData =[{
     question: "How many cards does each player get at the start?",
     options: ["25", "30"],
     answer:"25",
-}
+},
+ {
+     question:"",
+     options:["",""],
+     answer:"",
+ }
 ]
 
 function wrongAnswer(){
-    wrongAnswerScore ++;
+    wrongAnswerScore --;
+    questionCount++;
 }
 
 function correctAnswer(){
@@ -61,27 +61,47 @@ function showQuestion(){
     questionElement.innerText = question.question;
     answer1.innerText = question.options[0]
     answer2.innerText = question.options[1]
+    resultButton.innerText = "End quiz";
+  //  resultButton.addEventListener("click", endQuiz());
     question.options.forEach(options => {
         answer1.addEventListener("click", () => {
             isAnswerCorrect(answer1.innerText);
             showQuestion();
+                endQuiz();
+            
      }
     )})
     question.options.forEach(options => {
         answer2.addEventListener("click", () => {
             isAnswerCorrect(answer2.innerText);
             showQuestion();
+                endQuiz();
+            
         })})
     }
 
 
-
 function isAnswerCorrect(selectedAnswer){
-    if(selectedAnswer == quizData[questionCount].answer){
+    if(selectedAnswer === quizData[questionCount].answer){
         correctAnswer();
-    } else{
-        wrongAnswer();
+        console.log(questionCount);
+    } else {
+        console.log("hello world");
+    } 
+}
+
+
+function endQuiz(){
+    if(questionCount === 5){
+        answer1.style.display = 'none';
+        answer2.style.display = 'none';
+        questionElement.style.display = 'none';
+        showResults();
     }
 
+ }
+function showResults(){
+    resultScore.innerText = `You scored a ${wrongAnswerScore + correctAnswerScore} out of 4!`
 }
- showQuestion();
+ 
+  showQuestion();
