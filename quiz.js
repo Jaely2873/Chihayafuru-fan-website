@@ -9,8 +9,7 @@ const answer = document.getElementById("answers");
 const resultScore = document.getElementById("resultScore");
 const answer1 = document.getElementById("answer1");
 const answer2 = document.getElementById("answer2");
-const resultButton = document.getElementById("result");
-
+const restartButton = document.getElementById("restartButton");
 const quizData =[{
     question:"Who did Chihaya end up with?",
     options: ["Arata", "Taichi"],
@@ -45,7 +44,6 @@ const quizData =[{
 ]
 
 function wrongAnswer(){
-    wrongAnswerScore --;
     questionCount++;
 }
 
@@ -57,42 +55,55 @@ function correctAnswer(){
 
 
 function showQuestion(){
+  //  restartButton.style.visibility = "hidden";
     const question =  quizData[questionCount];
     questionElement.innerText = question.question;
     answer1.innerText = question.options[0]
     answer2.innerText = question.options[1]
-    resultButton.innerText = "End quiz";
-  //  resultButton.addEventListener("click", endQuiz());
-    question.options.forEach(options => {
+  //  resultButton.innerText = "End quiz";
+        }
         answer1.addEventListener("click", () => {
             isAnswerCorrect(answer1.innerText);
             showQuestion();
+            console.log("change");
                 endQuiz();
-            
      }
-    )})
-    question.options.forEach(options => {
+    )
         answer2.addEventListener("click", () => {
             isAnswerCorrect(answer2.innerText);
+            console.log("change");
             showQuestion();
                 endQuiz();
             
-        })})
-    }
+        })
+
+            restartButton.addEventListener("click", ()=>{
+                questionCount = 0;
+                console.log("reset", questionCount);
+                resultScore.style.display = 'none';
+                answer1.style.display = 'flex';
+                answer2.style.display = 'flex';
+                questionElement.style.display = 'block';
+                showQuestion();
+            });
+
+    
 
 
 function isAnswerCorrect(selectedAnswer){
-    if(selectedAnswer === quizData[questionCount].answer){
+    console.log(selectedAnswer)
+    if(selectedAnswer == quizData[questionCount].answer){
         correctAnswer();
         console.log(questionCount);
-    } else {
-        console.log("hello world");
+    } else if(selectedAnswer != quizData[questionCount].answer){
+        wrongAnswer();
     } 
 }
 
 
 function endQuiz(){
     if(questionCount === 5){
+        console.log("why are you not invisible");
         answer1.style.display = 'none';
         answer2.style.display = 'none';
         questionElement.style.display = 'none';
@@ -101,7 +112,15 @@ function endQuiz(){
 
  }
 function showResults(){
-    resultScore.innerText = `You scored a ${wrongAnswerScore + correctAnswerScore} out of 4!`
+    if(correctAnswerScore >=4){
+        resultScore.innerText = `You scored a ${correctAnswerScore} out of 5! You really know the ins and outs of karuta. You're like Chihaya, you have a natural talent for the game. The path to meijin/queen is within your reach.`;
+    } else if(correctAnswerScore < 4 && correctAnswerScore >=2){
+        resultScore.innerText = `You scored a ${correctAnswerScore} out of 5! You're like Taichi. While you may not have the natural talent of Arata or Chihaya, with hard work, you will reach great heights.`;
+    } else if(correctAnswerScore < 2){
+        resultScore.innerText = `You scored a ${correctAnswerScore} out of 5! You definitly have some ways to go before you have the knowledge of a master. But don't worry! Everyone starts out somewhere`;
+    }
+    showQuestion();
 }
+
  
   showQuestion();
