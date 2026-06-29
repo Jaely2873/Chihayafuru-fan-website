@@ -80,11 +80,12 @@ function showQuestion(){
             restartButton.addEventListener("click", ()=>{
                 questionCount = 0;
                 console.log("reset", questionCount);
+                showQuestion();
                 resultScore.style.display = 'none';
                 answer1.style.display = 'flex';
                 answer2.style.display = 'flex';
-                questionElement.style.display = 'block';
-                showQuestion();
+                questionElement.style.display = '';
+                questionElement.style.textAlign = 'center'
             });
 
     
@@ -112,6 +113,7 @@ function endQuiz(){
 
  }
 function showResults(){
+    resultScore.style.display = 'flex';
     if(correctAnswerScore >=4){
         resultScore.innerText = `You scored a ${correctAnswerScore} out of 5! You really know the ins and outs of karuta. You're like Chihaya, you have a natural talent for the game. The path to meijin/queen is within your reach.`;
     } else if(correctAnswerScore < 4 && correctAnswerScore >=2){
