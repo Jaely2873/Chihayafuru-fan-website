@@ -37,10 +37,37 @@ const quizData =[{
     answer:"25",
 },
  {
-     question:"",
-     options:["",""],
-     answer:"",
- }
+     question:"True or false: Chihaya rejected Taichi",
+     options:["True","False"],
+     answer:"True",
+ },
+ {
+    question:"How many cards are there in the Hanshan Ishhu?",
+    options:["50", "100"],
+    answer:"100",
+ },
+ {
+    question:"Whose validation did Chihaya wnat the most?",
+    options:["Chitose", "Arata"],
+    answer:"Chitose",
+ },
+{
+    question:"Who was the first member to join the Karuta club after Chihaya and Taichi?",
+    options:["Sumire", "Kana"],
+    answer:"Kana",
+},
+{
+    question:"Who was the president of the karuta club?",
+    options:["Taichi", "Chihaya"],
+    answer:"Taichi",
+},
+{
+    question:"",
+    options:"",
+    answer:"",
+}
+
+ 
 ]
 
 function wrongAnswer(){
@@ -65,13 +92,13 @@ function showQuestion(){
         answer1.addEventListener("click", () => {
             isAnswerCorrect(answer1.innerText);
             showQuestion();
-            console.log("change");
+            console.log("answer1");
                 endQuiz();
      }
     )
         answer2.addEventListener("click", () => {
             isAnswerCorrect(answer2.innerText);
-            console.log("change");
+            //console.log("answer2");
             showQuestion();
                 endQuiz();
             
@@ -79,6 +106,7 @@ function showQuestion(){
 
             restartButton.addEventListener("click", ()=>{
                 questionCount = 0;
+                correctAnswerScore = 0;
                 console.log("reset", questionCount);
                 showQuestion();
                 resultScore.style.display = 'none';
@@ -96,6 +124,7 @@ function isAnswerCorrect(selectedAnswer){
     if(selectedAnswer == quizData[questionCount].answer){
         correctAnswer();
         console.log(questionCount);
+        console.log(correctAnswerScore);
     } else if(selectedAnswer != quizData[questionCount].answer){
         wrongAnswer();
     } 
@@ -103,8 +132,8 @@ function isAnswerCorrect(selectedAnswer){
 
 
 function endQuiz(){
-    if(questionCount === 5){
-        console.log("why are you not invisible");
+    if(questionCount === 10){
+       // console.log("why are you not invisible");
         answer1.style.display = 'none';
         answer2.style.display = 'none';
         questionElement.style.display = 'none';
@@ -114,12 +143,12 @@ function endQuiz(){
  }
 function showResults(){
     resultScore.style.display = 'flex';
-    if(correctAnswerScore >=4){
-        resultScore.innerText = `You scored a ${correctAnswerScore} out of 5! You really know the ins and outs of karuta. You're like Chihaya, you have a natural talent for the game. The path to meijin/queen is within your reach.`;
-    } else if(correctAnswerScore < 4 && correctAnswerScore >=2){
-        resultScore.innerText = `You scored a ${correctAnswerScore} out of 5! You're like Taichi. While you may not have the natural talent of Arata or Chihaya, with hard work, you will reach great heights.`;
-    } else if(correctAnswerScore < 2){
-        resultScore.innerText = `You scored a ${correctAnswerScore} out of 5! You definitly have some ways to go before you have the knowledge of a master. But don't worry! Everyone starts out somewhere`;
+    if(correctAnswerScore >=8){
+        resultScore.innerText = `You scored a ${correctAnswerScore} out of 10! You really know the ins and outs of karuta. You're like Chihaya, you have a natural talent for the game. The path to meijin/queen is within your reach.`;
+    } else if(correctAnswerScore < 8 && correctAnswerScore >=4){
+        resultScore.innerText = `You scored a ${correctAnswerScore} out of 10! You're like Taichi. While you may not have the natural talent of Arata or Chihaya, with hard work, you will reach great heights.`;
+    } else if(correctAnswerScore < 4){
+        resultScore.innerText = `You scored a ${correctAnswerScore} out of 10! You definitly have some ways to go before you have the knowledge of a master. But don't worry! Everyone starts out somewhere`;
     }
     showQuestion();
 }
