@@ -47,7 +47,7 @@ const quizData =[{
     answer:"100",
  },
  {
-    question:"Whose validation did Chihaya wnat the most?",
+    question:"Whose validation did Chihaya want the most?",
     options:["Chitose", "Arata"],
     answer:"Chitose",
  },
