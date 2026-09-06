@@ -11,4 +11,4 @@ I'm a beginner to programming so I wanted to start out both with something simpl
 
 How to use:
 
-You can navigate between pages using the links in the navBar. It's recommended to do the quiz last if you're not familiar with the series. 
+You can navigate between pages using the links in the navBar. It's recommended to do the quiz last if you're not familiar with the series. To install copy and paste the link into a browser and it should open to index.html.
