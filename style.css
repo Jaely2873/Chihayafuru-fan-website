@@ -5,6 +5,7 @@
 
 body{
     background-color: #FFCDBD;
+    overflow-x: hidden;
 }
 
 .navBar{
@@ -12,10 +13,13 @@ body{
     background-color: #ffaf9d;
     overflow: hidden;
     padding: 2em;
+    width:100%;
+    position:fixed;
 }
 
 .NavLinks{
     display:inline;
+    text-align:center;
 }
 
 li a {
@@ -28,9 +32,9 @@ li a {
     padding-left: 1.5em;
     padding-top: 1.5em;
     padding-bottom:1.5em;
-    gap:20px;
+    gap:30px;
+    align-items:center;
 }
-
 li a :hover{
     color:pink;
 }
@@ -78,19 +82,32 @@ li a :hover{
     justify-content: center;
     min-height: 800px;
     background-attachment: fixed;
-    background-image:url("assets/everyone.jpg");
+    background-image:url("../assets/everyone.jpg");
     background-position:center;
     background-size:contain;
     background-color: rgba(0,0,0,0,0.4);
 }
 
 .parallaxText{
-    color:rgb(210, 106, 65);
+    color:white;
+     text-shadow:0 0 2px rgba(0, 0, 0, 0.9),
+    0 1px 4px rgba(0, 0, 0, 0.8);
     font-size: 40px;
     font-family: cursive;;
     text-align: center;
     text-decoration:solid;
 }
+
+.parallaxCharacterText{
+    color:whitesmoke;
+    font-size: 40px;
+     text-shadow:0 0 2px rgba(0, 0, 0, 0.9),
+    0 1px 4px rgba(0, 0, 0, 0.8);
+    font-family: cursive;;
+    text-align: center;
+    text-decoration:solid;
+}
+
 
 .barrier{
     display: flex;
@@ -100,6 +117,7 @@ li a :hover{
     padding-left: 1em;
     padding-right: 1em;
 }
+
 
 #description{
     font-size: 25px;
@@ -171,7 +189,7 @@ li a :hover{
     justify-content: center;
     min-height: 800px;
     background-attachment: fixed;
-    background-image:url("assets/cover.webp");
+    background-image:url("../assets/cover.webp");
     background-position:center;
     background-size:contain;
     background-color: rgba(0,0,0,0,0.4);
@@ -259,7 +277,7 @@ font-family:cursive;
     justify-content: center;
     min-height: 800px;
     background-attachment: fixed;
-    background-image:url("assets/karuta.jpg");
+    background-image:url("../assets/karuta.jpg");
     background-position:center;
     background-size:contain;
     background-color: rgba(0,0,0,0,0.4);
