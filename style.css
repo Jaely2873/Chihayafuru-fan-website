@@ -82,7 +82,7 @@ li a :hover{
     justify-content: center;
     min-height: 800px;
     background-attachment: fixed;
-    background-image:url("../assets/everyone.jpg");
+    background-image:url("assets/everyone.jpg");
     background-position:center;
     background-size:contain;
     background-color: rgba(0,0,0,0,0.4);
@@ -189,7 +189,7 @@ li a :hover{
     justify-content: center;
     min-height: 800px;
     background-attachment: fixed;
-    background-image:url("../assets/cover.webp");
+    background-image:url("assets/cover.webp");
     background-position:center;
     background-size:contain;
     background-color: rgba(0,0,0,0,0.4);
@@ -277,7 +277,7 @@ font-family:cursive;
     justify-content: center;
     min-height: 800px;
     background-attachment: fixed;
-    background-image:url("../assets/karuta.jpg");
+    background-image:url("assets/karuta.jpg");
     background-position:center;
     background-size:contain;
     background-color: rgba(0,0,0,0,0.4);
